@@ -23,7 +23,6 @@ httpServer.listen(PORT, () => {
 });
 
 // put the HTML file containing your form in a directory named "public" (relative to where this script is located)
-app.get("/", express.static(path.join(__dirname)));
 
 app.post('/detect',(req,res)=>{
      const {spawn}=require('child_process');
