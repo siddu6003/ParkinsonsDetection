@@ -18,8 +18,8 @@ with open('model_random_spiral','rb') as f:
 
 print("Model loaded")
 print("\n")
-
-url='uploads\\image.png'
+path=os.getcwd()
+url=path+'\\uploads\\image.png'
 img=imread(url)
 img_resize=resize(img,(150,150,3))
 l=[img_resize.flatten()]
