@@ -19,9 +19,14 @@ with open('model_spiral','rb') as f:
 print("Model loaded")
 print("\n")
 path=os.getcwd()
-url='app'+'/uploads/image.png'
+url=path+'\\uploads\\image.png'
 print(url)
 img=imread(url)
 img_resize=resize(img,(150,150,3))
 l=[img_resize.flatten()]
+print(l)
+probability=model.predict_proba(l)
+for ind,val in enumerate(Categories):
+    print(f'{val} = {probability[0][ind]*100}%')
+    print("\n")
 print("The predicted image is : "+Categories[model.predict(l)[0]])
