@@ -1,0 +1,7 @@
+pandas
+os
+skimage
+numpy
+matplotlib
+sklearn
+pickle
