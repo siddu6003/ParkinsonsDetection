@@ -1,5 +1,5 @@
 pandas
-skimage
+scikit-image
 numpy
 matplotlib
 sklearn
