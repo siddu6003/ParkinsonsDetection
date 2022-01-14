@@ -19,7 +19,7 @@ with open('model_KNN_spiral','rb') as f:
 print("Model loaded")
 print("\n")
 path=os.getcwd()
-url=path+'\\uploads\\image.png'
+url='image.png'
 img=imread(url)
 img_resize=resize(img,(150,150,3))
 l=[img_resize.flatten()]
