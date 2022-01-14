@@ -19,7 +19,7 @@ with open('model_wave','rb') as f:
 print("Model loaded")
 print("\n")
 path=os.getcwd()
-url=path+'\\uploads\\image.png'
+url=path+'/uploads/image.png'
 img_resize=resize(img,(150,150,3))
 l=[img_resize.flatten()]
 probability=model.predict_proba(l)
