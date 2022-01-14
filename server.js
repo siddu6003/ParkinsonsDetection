@@ -67,33 +67,33 @@ const upload = multer({
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/home.html');
 })
-app.post(
-  "/upload",
-  upload.single("file" /* name attribute of <file> element in your form */),
-  (req, res) => {
-    const tempPath = req.file.path;
-    const targetPath = path.join(__dirname, "./uploads/image.png");
+// app.post(
+//   "/upload",
+//   upload.single("file" /* name attribute of <file> element in your form */),
+//   (req, res) => {
+//     const tempPath = req.file.path;
+//     const targetPath = path.join(__dirname, "./uploads/image.png");
 
-    if (path.extname(req.file.originalname).toLowerCase() === ".png") {
-      fs.rename(tempPath, targetPath, err => {
-        if (err) return handleError(err, res);
+//     if (path.extname(req.file.originalname).toLowerCase() === ".png") {
+//       fs.rename(tempPath, targetPath, err => {
+//         if (err) return handleError(err, res);
 
-        res
-          .status(200)
-          .sendFile(path.join(__dirname, "/detect.html"));
-      });
-    } else {
-      fs.unlink(tempPath, err => {
-        if (err) return handleError(err, res);
+//         res
+//           .status(200)
+//           .sendFile(path.join(__dirname, "/detect.html"));
+//       });
+//     } else {
+//       fs.unlink(tempPath, err => {
+//         if (err) return handleError(err, res);
 
-        res
-          .status(403)
-          .contentType("text/plain")
-          .end("Only .png files are allowed!");
-      });
-    }
-  }
-);
+//         res
+//           .status(403)
+//           .contentType("text/plain")
+//           .end("Only .png files are allowed!");
+//       });
+//     }
+//   }
+// );
 
 app.get("/image.png", (req, res) => {
     res.sendFile(path.join(__dirname, "./uploads/image.png"));
