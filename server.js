@@ -25,44 +25,44 @@ httpServer.listen(PORT, () => {
 // put the HTML file containing your form in a directory named "public" (relative to where this script is located)
 
 
-app.post('/detect',(req,res)=>{
-     const {spawn}=require('child_process');
-     const algo=req.body.model;
-     console.log(algo);
-     let py="";
-     if(algo=="SVM_SPIRAL"){
-      py=spawn('python',['spiral_svm.py']);
-     }else if(algo=="SVM_WAVE"){
-        py=spawn('python',['wave_svm.py']);
-     }else if(algo=="RF_SPIRAL"){
-        py=spawn('python',['spiral_RF.py']);
-     }else if(algo=="RF_WAVE"){
-        py=spawn('python',['wave_RF.py']);
-     }else if(algo=="KNN_SPIRAL"){
-        py=spawn('python',['spiral_KNN.py']);
-     }else{
-        py=spawn('python',['wave_KNN.py']);
-     }
+// app.post('/detect',(req,res)=>{
+//      const {spawn}=require('child_process');
+//      const algo=req.body.model;
+//      console.log(algo);
+//      let py="";
+//      if(algo=="SVM_SPIRAL"){
+//       py=spawn('python',['spiral_svm.py']);
+//      }else if(algo=="SVM_WAVE"){
+//         py=spawn('python',['wave_svm.py']);
+//      }else if(algo=="RF_SPIRAL"){
+//         py=spawn('python',['spiral_RF.py']);
+//      }else if(algo=="RF_WAVE"){
+//         py=spawn('python',['wave_RF.py']);
+//      }else if(algo=="KNN_SPIRAL"){
+//         py=spawn('python',['spiral_KNN.py']);
+//      }else{
+//         py=spawn('python',['wave_KNN.py']);
+//      }
 
- py.stdout.on('data',(data)=>{
-     res.send(data.toString());
-     console.log(data.toString());
- })
+//  py.stdout.on('data',(data)=>{
+//      res.send(data.toString());
+//      console.log(data.toString());
+//  })
 
- py.on('close',(code)=>{
-     console.log(`child process exited with code ${code}`);
- })
- });
-
-
-
-const multer = require("multer");
+//  py.on('close',(code)=>{
+//      console.log(`child process exited with code ${code}`);
+//  })
+//  });
 
 
-const upload = multer({
-  dest: "/path/to/temporary/directory/to/store/uploaded/files"
-  // you might also want to set some limits: https://github.com/expressjs/multer#limits
-});
+
+// const multer = require("multer");
+
+
+// const upload = multer({
+//   dest: "/path/to/temporary/directory/to/store/uploaded/files"
+//   // you might also want to set some limits: https://github.com/expressjs/multer#limits
+// });
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/home.html');
