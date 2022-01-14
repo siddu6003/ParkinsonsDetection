@@ -19,7 +19,9 @@ with open('model_spiral','rb') as f:
 print("Model loaded")
 print("\n")
 path=os.getcwd()
+print(path)
 url=path+'/uploads/image.png'
+print(url)
 img=imread(url)
 img_resize=resize(img,(150,150,3))
 l=[img_resize.flatten()]
