@@ -26,31 +26,7 @@ httpServer.listen(PORT, () => {
 
 
 app.post('/detect',(req,res)=>{
-     const {spawn}=require('child_process');
-     const algo=req.body.model;
-     console.log(algo);
-     let py="";
-     if(algo=="SVM_SPIRAL"){
-      py=spawn('python',[__dirname+'\\spiral_svm.py']);
-     }else if(algo=="SVM_WAVE"){
-        py=spawn('python',[__dirname+'\\wave_svm.py']);
-     }else if(algo=="RF_SPIRAL"){
-        py=spawn('python',[__dirname+'\\spiral_RF.py']);
-     }else if(algo=="RF_WAVE"){
-        py=spawn('python',[__dirname+'\\wave_RF.py']);
-     }else if(algo=="KNN_SPIRAL"){
-        py=spawn('python',[__dirname+'\\spiral_KNN.py']);
-     }else{
-        py=spawn('python',[__dirname+'\\wave_KNN.py']);
-     }
- py.stdout.on('data',(data)=>{
-     res.send(data.toString());
-     console.log(data.toString());
- })
-
- py.on('close',(code)=>{
-     console.log(`child process exited with code ${code}`);
- })
+    res.send("success");
  });
 
 
