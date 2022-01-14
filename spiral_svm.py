@@ -19,7 +19,7 @@ with open('model_spiral','rb') as f:
 print("Model loaded")
 print("\n")
 
-url='D:\\Mldeploy\\uploads\\image.png'
+url='uploads\\image.png'
 img=imread(url)
 plt.imshow(img)
 plt.show()
