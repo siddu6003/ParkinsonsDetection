@@ -3,4 +3,4 @@ scikit-image
 numpy
 matplotlib
 sklearn
-pickle
+
