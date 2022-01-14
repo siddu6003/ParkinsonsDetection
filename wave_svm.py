@@ -21,8 +21,6 @@ print("\n")
 
 url='uploads\\image.png'
 img=imread(url)
-plt.imshow(img)
-plt.show()
 img_resize=resize(img,(150,150,3))
 l=[img_resize.flatten()]
 probability=model.predict_proba(l)
