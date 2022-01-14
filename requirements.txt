@@ -3,4 +3,4 @@ scikit-image
 numpy
 matplotlib
 sklearn
-cv2
+opencv
