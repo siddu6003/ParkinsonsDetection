@@ -60,7 +60,7 @@ const multer = require("multer");
 
 
 const upload = multer({
-  dest: "/path/to/temporary/directory/to/store/uploaded/files"
+  dest: __dirname+"/public/images"
   // you might also want to set some limits: https://github.com/expressjs/multer#limits
 });
 
