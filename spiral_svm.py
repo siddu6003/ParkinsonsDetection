@@ -19,7 +19,7 @@ with open('model_spiral','rb') as f:
 print("Model loaded")
 print("\n")
 path=os.getcwd()
-url=path+'/image.png'
+url=path+'//image.png'
 print(url)
 img=imread(url)
 img_resize=resize(img,(150,150,3))
