@@ -1,5 +1,4 @@
 pandas
-os
 skimage
 numpy
 matplotlib
