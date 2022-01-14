@@ -31,19 +31,18 @@ app.post('/detect',(req,res)=>{
      console.log(algo);
      let py="";
      if(algo=="SVM_SPIRAL"){
-      py=spawn('python',['spiral_svm.py']);
+      py=spawn('python',['./spiral_svm.py']);
      }else if(algo=="SVM_WAVE"){
-        py=spawn('python',['wave_svm.py']);
+        py=spawn('python',['./wave_svm.py']);
      }else if(algo=="RF_SPIRAL"){
-        py=spawn('python',['spiral_RF.py']);
+        py=spawn('python',['./spiral_RF.py']);
      }else if(algo=="RF_WAVE"){
-        py=spawn('python',['wave_RF.py']);
+        py=spawn('python',['./wave_RF.py']);
      }else if(algo=="KNN_SPIRAL"){
-        py=spawn('python',['spiral_KNN.py']);
+        py=spawn('python',['./spiral_KNN.py']);
      }else{
-        py=spawn('python',['wave_KNN.py']);
+        py=spawn('python',['./wave_KNN.py']);
      }
-
  py.stdout.on('data',(data)=>{
      res.send(data.toString());
      console.log(data.toString());
