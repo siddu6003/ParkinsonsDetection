@@ -13,13 +13,13 @@ import pickle
 
 Categories=['healthy','parkinson']
 
-with open('app/model_spiral','rb') as f:
+with open('model_spiral','rb') as f:
 	model=pickle.load(f)
 
 print("Model loaded")
 print("\n")
 path=os.getcwd()
-url=path+'/uploads/image.png'
+url=path+'/image.png'
 print(url)
 img=imread(url)
 img_resize=resize(img,(150,150,3))
