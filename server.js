@@ -94,7 +94,5 @@ app.post(
   }
 );
 
-app.get("/image.png", (req, res) => {
-    res.send(__dirname);
-  });
+
 
