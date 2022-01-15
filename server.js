@@ -44,8 +44,8 @@ app.post('/detect',(req,res)=>{
         py=spawn('python',[__dirname+'/wave_KNN.py']);
      }
  py.stdout.on('data',(data)=>{
-     res.send(data.toString());
-     console.log(data.toString());
+    console.log(data.toString());
+    return res.send(data.toString());
  })
 
  py.on('close',(code)=>{
